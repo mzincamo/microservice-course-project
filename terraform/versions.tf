@@ -9,7 +9,8 @@ terraform {
 
 # Configure the AWS Provider
 provider "aws" {
-  region = "us-east-1"
+  region = var.region
+
   default_tags {
     tags = {
       owner = "mzincamo"
@@ -17,3 +18,7 @@ provider "aws" {
   }
 }
 
+variable "region" {
+  description = "aws-region"
+  default     = "us-east-1"
+}
